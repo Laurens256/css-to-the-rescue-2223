@@ -20,6 +20,6 @@ button {
 }
 
 /* cool */
-body:has(input[type="range"][data-value="0"]) p {
+body:has(input[type="range"][data-value="0"]):has(input[type="range"][data-value="100"]) p {
 	background: red;
 }
