@@ -1,0 +1,25 @@
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+button {
+	border: none;
+	background: none;
+}
+
+:root {
+
+}
+
+/* cool */
+body:has(input[type="range"][data-value="0"]) p {
+	background: red;
+}
