@@ -23,3 +23,23 @@ button {
 body:has(input[type="range"][data-value="0"]):has(input[type="range"][data-value="100"]) p {
 	background: red;
 }
+
+input[type="range"] {
+	border-radius: 50%;
+}
+
+input[type="checkbox"] {
+	border-radius: 50%;
+}
+
+input[type="text"] {
+	outline: 0;
+}
+
+input[type="text"]:valid {
+	border: solid 3px green;
+}
+
+input[type="text"]:invalid {
+	border: solid 3px red;
+}
