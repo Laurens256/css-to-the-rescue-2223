@@ -1,7 +1,6 @@
 const ranges: NodeListOf<HTMLInputElement> =
 	document.querySelectorAll('input[type=range]')!;
 const head = document.querySelector('head')!;
-const body = document.querySelector('body')!;
 
 ranges.forEach((range) => {
 	range.addEventListener('input', () => {
