@@ -1,6 +1,7 @@
 @import url('./default-panel.css');
 @import url('./color-checkbox-panel.css');
 @import url('./portrait.css');
+@import url('./master-switch.css');
 
 *,
 *:before,
