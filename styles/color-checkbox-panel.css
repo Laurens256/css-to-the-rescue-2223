@@ -1,0 +1,12 @@
+section[data-panel="color-checkbox"] {
+	/* background: red; */
+	width: 50%;
+	height: 10em;
+}
+
+section {
+	background: white;
+	& p {
+		color: blue;
+	}
+}
