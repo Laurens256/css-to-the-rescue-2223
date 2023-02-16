@@ -1,12 +1,95 @@
-section[data-panel="color-checkbox"] {
-	/* background: red; */
-	width: 50%;
-	height: 10em;
+section[data-panel='color-combination-checkbox'] {
+	height: 20vh;
+	width: 30vw;
+	/* background: pink; */
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	& label {
+		position: fixed;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	& input {
+		appearance: none;
+		position: relative;
+		height: 40%;
+		aspect-ratio: 1/1;
+		place-self: center;
+
+		&::before {
+			content: '';
+			display: block;
+			color: rgba(255, 66, 56, 0.6);
+			height: 100%;
+			background-color: currentColor;
+			box-shadow: 0 0 10px 3px currentColor;
+			animation: glow 8s ease-in-out infinite;
+		}
+
+		&:checked::before {
+			color: rgba(23, 138, 0, 0.6);
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 3px;
+			left: 3px;
+			right: 3px;
+			bottom: 3px;
+			background-color: rgba(255, 255, 255, 0.1);
+			box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+		}
+
+		&:active {
+			transform: translate(1px, 1px);
+			&::after {
+				box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.4);
+			}
+		}
+
+		&:nth-of-type(1)::before {
+			animation-delay: 0s;
+		}
+		&:nth-of-type(2)::before {
+			animation-delay: -3s;
+		}
+		&:nth-of-type(3)::before {
+			animation-delay: -1s;
+		}
+		&:nth-of-type(4)::before {
+			animation-delay: 3s;
+		}
+		&:nth-of-type(5)::before {
+			animation-delay: -4s;
+		}
+		&:nth-of-type(6)::before {
+			animation-delay: -1s;
+		}
+		&:nth-of-type(7)::before {
+			animation-delay: -2s;
+		}
+		&:nth-of-type(8)::before {
+			animation-delay: -5s;
+		}
+		&:nth-of-type(9)::before {
+			animation-delay: 0s;
+		}
+		&:nth-of-type(10)::before {
+			animation-delay: -1s;
+		}
+	}
 }
 
-section {
-	background: white;
-	& p {
-		color: blue;
+@keyframes glow {
+	0% {
+		box-shadow: 0 0 5px 3px currentColor;
+	}
+	50% {
+		box-shadow: 0 0 20px 6px currentColor;
+	}
+	100% {
+		box-shadow: 0 0 5px 3px currentColor;
 	}
 }

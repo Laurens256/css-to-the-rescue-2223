@@ -1,0 +1,9 @@
+/* media query for orientation portrait */
+/* @media screen and (orientation: portrait) {
+	main {
+		width: 100vh;
+		height: 100vw;
+		transform-origin: top left;
+		transform: rotate(90deg);
+	}
+} */

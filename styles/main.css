@@ -1,5 +1,6 @@
 @import url('./default-panel.css');
 @import url('./color-checkbox-panel.css');
+@import url('./portrait.css');
 
 *,
 *:before,
@@ -16,6 +17,11 @@ ul, ol {
 button {
 	border: none;
 	background: none;
+	cursor: pointer;
+}
+
+input {
+	cursor: pointer;
 }
 
 :root {
