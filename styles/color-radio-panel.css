@@ -1,10 +1,13 @@
-section[data-panel='color-combination-checkbox'] {
-	height: 20vh;
-	width: 30vw;
-	display: grid;
-	grid-template-columns: repeat(5, 1fr);
+section[data-panel='color-combination-radio'] {
 
-	border: solid 2px black;
+	& div {
+		display: flex;
+		flex-direction: column;
+	}
+
+	& fieldset {
+		display: inline-block;
+	}
 
 	& label {
 		position: fixed;
@@ -12,13 +15,16 @@ section[data-panel='color-combination-checkbox'] {
 		pointer-events: none;
 	}
 
-
 	& input {
 		appearance: none;
 		position: relative;
-		height: 40%;
+		height: 3em;
 		aspect-ratio: 1/1;
-		place-self: center;
+
+		&::before,
+		&::after {
+			border-radius: 50%;
+		}
 
 		&::before {
 			content: '';

@@ -1,8 +1,23 @@
 @import url('./default-panel.css');
 @import url('./color-checkbox-panel.css');
+@import url('./color-radio-panel.css');
 @import url('./portrait.css');
 @import url('./master-switch.css');
+@import url('./animation/idle-glow.css');
 
+:root {
+	--main-bg: #86999b;
+	--green-button: rgba(23, 138, 0, 0.6);
+	--red-button: rgba(255, 66, 56, 0.6);
+
+	--glassy-button: rgba(255, 255, 255, 0.1);
+}
+
+
+
+/*********************/
+/***** CSS RESET *****/
+/*********************/
 *,
 *:before,
 *:after {
@@ -21,10 +36,10 @@ button {
 	cursor: pointer;
 }
 
-input {
-	cursor: pointer;
+fieldset {
+	border: none;
 }
 
-:root {
-	--main-bg: #86999b;
+input {
+	cursor: pointer;
 }
