@@ -1,0 +1,17 @@
+section[data-panel='double-slider-value'] {
+	height: 30em;
+	width: 20em;
+	display: inline-block;
+
+	& input {
+		transform: rotate(-90deg);
+		transform-origin: right;
+
+		&::before {
+			content: attr(data-value);
+			position: absolute;
+			color: red;
+			transform: rotate(90deg) translateY(1em);
+		}
+	}
+}

@@ -6,6 +6,7 @@
 @import url('./modules/master-switch.css');
 @import url('./modules/color-checkbox-panel.css');
 @import url('./modules/color-radio-panel.css');
+@import url('./modules/double-slider-panel.css');
 
 
 :root {
@@ -45,4 +46,11 @@ fieldset {
 
 input {
 	cursor: pointer;
+}
+
+/* verstop de labels */
+aside label {
+	position: fixed;
+	opacity: 0;
+	pointer-events: none;
 }
