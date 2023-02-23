@@ -8,5 +8,6 @@ main {
 	background: var(--main-bg);
 
 	& > section {
+		display: inline-block;
 	}
 }

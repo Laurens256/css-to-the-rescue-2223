@@ -1,16 +1,15 @@
 section[data-panel='color-combination-checkbox'] {
-	height: 20vh;
-	width: 30vw;
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
-
-	border: solid 2px black;
+	width: 25em;
+	max-width: 100%;
+	gap: 1em;
 
 	& input {
 		appearance: none;
 		position: relative;
-		height: 40%;
-		aspect-ratio: 1/1;
+		height: 4em;
+		aspect-ratio: 1;
 		place-self: center;
 
 		&::before {

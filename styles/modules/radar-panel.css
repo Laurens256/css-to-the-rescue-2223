@@ -1,0 +1,60 @@
+/* bron: code van Sanne */
+section[data-panel='radar'] {
+	& div {
+		width: 50px;
+		aspect-ratio: 1;
+
+		animation: radar 4s infinite linear;
+		background-color: black;
+
+		background-image:
+		/* het mask */ radial-gradient(
+				closest-side,
+				transparent 100%,
+				#000 calc(100% + 0.5px)
+			),
+			/* de woosh */
+				conic-gradient(
+					from var(--radar-angle, 0deg),
+					transparent,
+					lime 119.8deg,
+					transparent 120.2deg
+				),
+			/* horizontale lijnen */
+				repeating-linear-gradient(
+					to right,
+					transparent 45% calc(50% - 0.6px),
+					lime calc(50% - 0.4px) calc(50% + 0.4px),
+					transparent calc(50% + 0.6px) 55%
+				),
+			/* verticale lijnen */
+				repeating-linear-gradient(
+					transparent 45% calc(50% - 0.6px),
+					lime calc(50% - 0.4px) calc(50% + 0.4px),
+					transparent calc(50% + 0.6px) 55%
+				),
+			/* cirkels */
+				repeating-radial-gradient(
+					closest-side,
+					lime 0 0.4px,
+					transparent 0.6px calc(20% - 0.6px),
+					lime calc(20% - 0.4px) 20%
+				);
+	}
+}
+
+@keyframes radar {
+	0% {
+	}
+	100% {
+		--radar-angle: 360deg;
+	}
+}
+
+/* zodat de browser weet hoe --radar-angle te animeren */
+/* werkt in chrome - wel onderdeel va interop 2023 */
+@property --radar-angle {
+	syntax: '<angle>';
+	inherits: false;
+	initial-value: 0deg;
+}

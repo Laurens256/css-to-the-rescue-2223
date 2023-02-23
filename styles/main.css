@@ -3,6 +3,7 @@
 @import url('./animation/idle-glow.css');
 
 /* modules */
+@import url('./modules/radar-panel.css');
 @import url('./modules/master-switch.css');
 @import url('./modules/color-checkbox-panel.css');
 @import url('./modules/color-radio-panel.css');
@@ -16,7 +17,6 @@
 
 	--glassy-button: rgba(255 255 255 / 0.1);
 }
-
 
 
 /*********************/
