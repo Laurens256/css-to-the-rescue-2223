@@ -42,3 +42,6 @@ Tijdens het schetsen van mijn paneel, heb ik ervoor gekozen nog niet al te veel 
 
 ## Week 2
 Het plan voor week 2 is om meer modules te bouwen voor het bedieningspaneel. In week 1 heb ik mijn ideeën en structuur opgezet zodat ik me vanaf nu voornamelijk kan focussen op het bouwen van het paneel.
+
+### Modules
+In week 2 heb ik een module met radio buttons en een deel van een range slider module gebouwd. Het radio button paneel bestaat uit twee rijen met buttons die in een bepaald sequence moeten staan. De module met range sliders leest door middle van een stukje Javascript de waarde van de slider uit en zet met CSS in een `::before` element. Hiervoor wordt gebruik gemaakt van de `attr()` functie uit CSS.
