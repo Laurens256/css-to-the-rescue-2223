@@ -4,8 +4,10 @@ section[data-panel='double-slider-value'] {
 	display: inline-block;
 
 	& input {
+		appearance: none;
 		transform: rotate(-90deg);
 		transform-origin: right;
+		background: transparent;
 
 		&::before {
 			content: attr(data-value);
@@ -13,5 +15,30 @@ section[data-panel='double-slider-value'] {
 			color: red;
 			transform: rotate(90deg) translateY(1em);
 		}
+		&::after {
+		}
+
+		&:focus-visible {
+			outline: none;
+		}
+
+		&:focus {
+			outline: solid 2px red;
+		}
+
+		&::-webkit-slider-thumb {
+			appearance: none;
+			height: 20px;
+			width: 39px;
+			border-radius: 7px;
+			background: purple;
+			margin-top: -3.6px;
+		}
+
+		&::-webkit-slider-runnable-track {
+			height: 12.8px;
+			background: hotpink;
+			border-radius: 25px;
+		  }
 	}
 }
