@@ -9,6 +9,11 @@
 @import url('./modules/color-radio-panel.css');
 @import url('./modules/double-slider-panel.css');
 
+@font-face {
+	src: url('../assets/digital-7-font/Digital7Mono-Yz9J4.ttf');
+	font-family: 'digital-7';
+}
+
 
 :root {
 	--main-bg: #86999b;
@@ -16,6 +21,8 @@
 	--red-button: rgba(255 66 56 / 0.6);
 
 	--glassy-button: rgba(255 255 255 / 0.1);
+
+	--slider-bg: #4c5555;
 }
 
 

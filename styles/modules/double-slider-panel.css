@@ -1,44 +1,69 @@
 section[data-panel='double-slider-value'] {
-	height: 30em;
-	width: 20em;
-	display: inline-block;
+	position: absolute;
+	right: 0;
+	bottom: 30%;
+	transform: rotate(-90deg);
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
 
 	& input {
+		color: black;
 		appearance: none;
-		transform: rotate(-90deg);
-		transform-origin: right;
-		background: transparent;
-
-		&::before {
-			content: attr(data-value);
-			position: absolute;
-			color: red;
-			transform: rotate(90deg) translateY(1em);
-		}
-		&::after {
-		}
-
-		&:focus-visible {
-			outline: none;
-		}
-
-		&:focus {
-			outline: solid 2px red;
-		}
+		height: 100px;
+		width: 600px;
+		border-radius: 4em;
+		position: relative;
+		/* 1e gradient lijntje in het midden */ /* prettier-ignore */
+		background: linear-gradient(
+					to bottom,
+					transparent 20%,
+					var(--slider-bg) 20%, 45%,
+					currentColor 0, 55%,
+					var(--slider-bg) 55%, 80%,
+					transparent 0
+				) 0 0, no-repeat,
+			/* 2e gradient horizontale lijntjes */
+				linear-gradient(
+					to right,
+					currentColor 4%,
+					transparent 0,
+					transparent 50%,
+					currentColor 0, 54%,
+					transparent 0
+				) 15% 0, repeat;
+		background-color: var(--slider-bg);
+		background-size: 40% 100%;
 
 		&::-webkit-slider-thumb {
 			appearance: none;
-			height: 20px;
-			width: 39px;
-			border-radius: 7px;
-			background: purple;
-			margin-top: -3.6px;
+			width: 30px;
+			height: 30px;
+			background: var(--slider-bg);
+			border: solid red 2px;
+			border-radius: 50%;
+			margin-top: 35.4px;
 		}
 
 		&::-webkit-slider-runnable-track {
-			height: 12.8px;
-			background: hotpink;
-			border-radius: 25px;
-		  }
+			height: 100%;
+		}
+
+		&:before {
+			content: '0'attr(data-value);
+			font-family: 'digital-7';
+			position: absolute;
+			font-size: 3rem;
+			/* cool: zorgt ervoor dat er altijd 2 characters worden getoond en dat tekst overflowed aan linkerkant */
+			width: 2ch;
+			direction: rtl;
+			left: -3rem;
+			bottom: 1.5rem;
+			transform: rotate(90deg);
+			overflow: hidden;
+
+			color: #0f0;
+			text-shadow: 0 0 .1em currentColor;
+		}
 	}
 }
