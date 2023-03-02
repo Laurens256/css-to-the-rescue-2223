@@ -1,4 +1,10 @@
 section[data-panel='double-slider-value'] {
+	--slider-bg: #4c5555;
+	--slider-bg-darker: #3c4545;
+	--slider-bg-lighter: #5c6565;
+	--line-color: #000;
+	--screen-color: rgb(51 51 51);
+
 	position: absolute;
 	right: 0;
 	bottom: 30%;
@@ -8,10 +14,11 @@ section[data-panel='double-slider-value'] {
 	gap: 1em;
 
 	& input {
-		color: black;
+		--height: clamp(10px, 100px, 10vw);
+		color: var(--line-color);
 		appearance: none;
-		height: 100px;
-		width: 600px;
+		height: var(--height);
+		width: clamp(60px, 600px, 70vh);
 		border-radius: 4em;
 		position: relative;
 		/* 1e gradient lijntje in het midden */ /* prettier-ignore */
@@ -35,35 +42,58 @@ section[data-panel='double-slider-value'] {
 		background-color: var(--slider-bg);
 		background-size: 40% 100%;
 
+		/* het vastpak dingetjes */
 		&::-webkit-slider-thumb {
 			appearance: none;
-			width: 30px;
+			width: 50px;
 			height: 30px;
-			background: var(--slider-bg);
-			border: solid red 2px;
-			border-radius: 50%;
+			border: solid var(--line-color) 2px;
+			border-radius: 10px;
 			margin-top: 35.4px;
+			margin-top: calc(var(--height) * .354);
+
+			background: var(--slider-bg) linear-gradient(to right, var(--slider-bg-lighter) 1px, transparent 1px);
+			background-size: 4px;
 		}
 
+		/* de track zelf */
 		&::-webkit-slider-runnable-track {
 			height: 100%;
 		}
 
-		&:before {
-			content: '0'attr(data-value);
+		&::before,
+		&::after {
+			box-sizing: content-box;
 			font-family: 'digital-7';
 			position: absolute;
 			font-size: 3rem;
-			/* cool: zorgt ervoor dat er altijd 2 characters worden getoond en dat tekst overflowed aan linkerkant */
 			width: 2ch;
-			direction: rtl;
-			left: -3rem;
-			bottom: 1.5rem;
+			width: calc(2ch + .8rem);
+			left: -4.8rem;
+			bottom: 1.25rem;
 			transform: rotate(90deg);
+			/* cool: zorgt ervoor dat er altijd 2 characters worden getoond en dat tekst overflowed aan linkerkant */
+			direction: rtl;
 			overflow: hidden;
+			letter-spacing: .3rem;
 
+			border-radius: 2px;
+			border: solid var(--screen-color);
+			border-width: 5px 15px;
+		}
+
+		&::before {
+			content: '00';
+			color: rgba(255, 255, 255, 0.15);
+			background: var(--screen-color);
+		}
+
+		&::after {
+			content: '0'attr(data-value);
 			color: #0f0;
 			text-shadow: 0 0 .1em currentColor;
+			box-shadow: 0 0 .1em currentColor;
+			box-shadow: 0 0 0 2px var(--line-color);
 		}
 	}
 }
