@@ -1,0 +1,57 @@
+section[data-panel='input-code'] {
+	--font-size: 4rem;
+
+	& div {
+		position: relative;
+		font-family: 'digital-7';
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: var(--screen-color);
+		padding: 0.5rem 1rem;
+		font-size: var(--font-size);
+		width: calc(4ch + 2rem);
+		color: var(--digital-letters);
+		isolation: isolate;
+		border: 3px solid transparent;
+		transition: all 0.2s ease;
+	}
+
+	& div:has(input:valid) {
+		border-color: var(--digital-letters);
+		animation: codeValid 0.8s ease 2 0.3s;
+	}
+
+	& div:focus-within:has(input:invalid) {
+		border-color: red;
+	}
+
+	& input {
+		background: none;
+		cursor: initial;
+		font-family: inherit;
+		font-size: inherit;
+		width: 4ch;
+		border: none;
+		outline: none;
+		color: inherit;
+		text-shadow: 0 0 0.1em currentColor;
+	}
+
+	& span {
+		position: absolute;
+		color: var(--digital-letters-placeholder);
+		pointer-events: none;
+		z-index: -1;
+	}
+}
+
+@keyframes codeValid {
+	0%,
+	100% {
+		border-color: var(--digital-letters);
+	}
+	50% {
+		border-color: transparent;
+	}
+}

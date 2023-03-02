@@ -3,7 +3,6 @@ section[data-panel='double-slider-value'] {
 	--slider-bg-darker: #3c4545;
 	--slider-bg-lighter: #5c6565;
 	--line-color: #000;
-	--screen-color: rgb(51 51 51);
 
 	position: absolute;
 	right: 0;
@@ -83,14 +82,14 @@ section[data-panel='double-slider-value'] {
 		}
 
 		&::before {
-			content: '00';
-			color: rgba(255, 255, 255, 0.15);
+			content: '88';
+			color: var(--digital-letters-placeholder);
 			background: var(--screen-color);
 		}
 
 		&::after {
 			content: '0'attr(data-value);
-			color: #0f0;
+			color: var(--digital-letters);
 			text-shadow: 0 0 .1em currentColor;
 			box-shadow: 0 0 .1em currentColor;
 			box-shadow: 0 0 0 2px var(--line-color);

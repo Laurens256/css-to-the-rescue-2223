@@ -8,6 +8,7 @@
 @import url('./modules/color-checkbox-panel.css');
 @import url('./modules/color-radio-panel.css');
 @import url('./modules/double-slider-panel.css');
+@import url('./modules/input-code-panel.css');
 
 @font-face {
 	src: url('../assets/digital-7-font/Digital7Mono-Yz9J4.ttf');
@@ -23,6 +24,10 @@
 	--glassy-button: rgba(255 255 255 / 0.1);
 
 	--slider-bg: #4c5555;
+
+	--screen-color: rgb(51 51 51);
+	--digital-letters: #0f0;
+	--digital-letters-placeholder: rgba(255, 255, 255, 0.15);
 }
 
 
