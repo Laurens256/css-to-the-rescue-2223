@@ -1,5 +1,4 @@
 /* witregels kunnen code breken */
-/* combinatie color-combination-checkbox: 2, 5, 9, 10 */
 main:has(section[data-panel='color-combination-checkbox'] input:nth-of-type(1):not(:checked)
 	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(2):checked
 	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(3):not(:checked)
@@ -24,245 +23,105 @@ main:has(section[data-panel='color-combination-checkbox'] input:nth-of-type(1):n
 
 	/* input code */
 	):has(section[data-panel='input-code'] input:valid
-	) {
+	) section[data-panel='master-switch'] {
 	filter: hue-rotate(180deg);
+
+	& input {
+		display: initial;
+	}
+
+	& label::after {
+		pointer-events: initial;
+		cursor: pointer;
+	}
 }
-
-
 
 section[data-panel='master-switch'] {
 	--bg: #ccc;
+	--transition-duration: 1s;
+	--full-width: 15em;
+	--stick-height: calc(var(--full-width) / 3.75);
+	--ball-width: calc(var(--full-width) / 2.5);
 
-	--hghlght: #fff;
-	--shdw: #888;
-	--shdw-dark: #666;
-	--animation-duration: 1s;
+	--ball-z: calc(var(--full-width) / 1.875);
 
 	& input {
+		display: none;
 		appearance: none;
 
 		&:checked + label {
 			&::before {
-				animation: staf-rev var(--animation-duration) ease-out forwards;
+				transform: none;
 			}
 
 			&::after {
-				animation: bal-rev var(--animation-duration) ease-out forwards;
+				transform: rotateX(85deg) translateZ(var(--ball-z)) rotateX(-85deg);
 			}
 		}
 	}
 
 	& label {
 		font-size: clamp(0.5em, 2vmin, 0.75em);
-		/************/
-		/* DE PLAAT */
-		/************/
-		width: 15em;
+		width: var(--full-width);
 		aspect-ratio: 1/2;
 		isolation: isolate;
 		background-color: var(--bg);
 		border-radius: 1em;
 
-		/************/
-		/* DE TEKST */
-		/************/
+		/* tekst */
 		display: grid;
 		place-content: end center;
 		padding: 0.5em 0;
 		color: black;
 
-		/***********************/
-		/* DE GEUL & SCHROEVEN */
-		/***********************/
-		background-image:
-			/* pil */ linear-gradient(to right, #000, #000),
+		background-image: linear-gradient(to right, #000, #000),
 			radial-gradient(circle, #000 2em, transparent 2em),
-			radial-gradient(circle, #000 2em, transparent 2em),
-			/* schroeven */
-				radial-gradient(
-					closest-side,
-					transparent calc(100% - 0.25em - 0.1em),
-					#ccc calc(100% - 0.25em)
-				),
-			linear-gradient(
-				-30deg,
-				transparent calc(50% - 0.25em),
-				#999 calc(50% - 0.15em),
-				#000 calc(50% + 0.15em),
-				transparent calc(50% + 0.25em)
-			),
-			radial-gradient(closest-side at 40% 40%, white 10%, #bbb 60% 120%, #333 150%),
-			radial-gradient(
-				closest-side,
-				transparent calc(100% - 0.25em - 0.1em),
-				#ccc calc(100% - 0.25em)
-			),
-			linear-gradient(
-				10deg,
-				transparent calc(50% - 0.25em),
-				#999 calc(50% - 0.15em),
-				#000 calc(50% + 0.15em),
-				transparent calc(50% + 0.25em)
-			),
-			radial-gradient(closest-side at 40% 40%, white 10%, #bbb 60% 120%, #333 150%),
-			radial-gradient(
-				closest-side,
-				transparent calc(100% - 0.25em - 0.1em),
-				#ccc calc(100% - 0.25em)
-			),
-			linear-gradient(
-				25deg,
-				transparent calc(50% - 0.25em),
-				#999 calc(50% - 0.15em),
-				#000 calc(50% + 0.15em),
-				transparent calc(50% + 0.25em)
-			),
-			radial-gradient(closest-side at 40% 40%, white 10%, #bbb 60% 120%, #333 150%),
-			radial-gradient(
-				closest-side,
-				transparent calc(100% - 0.25em - 0.1em),
-				#ccc calc(100% - 0.25em)
-			),
-			linear-gradient(
-				-15deg,
-				transparent calc(50% - 0.25em),
-				#999 calc(50% - 0.15em),
-				#000 calc(50% + 0.15em),
-				transparent calc(50% + 0.25em)
-			),
-			radial-gradient(closest-side at 40% 40%, white 10%, #bbb 60% 120%, #333 150%);
-
-		background-size: 4em 7em, 4em 6em, 4em 6em, 3em 3em, 2.5em 2.5em, 2.5em 2.5em, 3em 3em,
-			2.5em 2.5em, 2.5em 2.5em, 3em 3em, 2.5em 2.5em, 2.5em 2.5em, 3em 3em, 2.5em 2.5em,
-			2.5em 2.5em;
-
-		background-position: center center, center calc(50% - 3.5em), center calc(50% + 3.5em),
-			1em 1em, 1.25em 1.25em, 1.25em 1.25em, calc(100% - 1em) 1em,
-			calc(100% - 1.25em) 1.25em, calc(100% - 1.25em) 1.25em, 1em calc(100% - 1em),
-			1.25em calc(100% - 1.25em), 1.25em calc(100% - 1.25em),
-			calc(100% - 1em) calc(100% - 1em), calc(100% - 1.25em) calc(100% - 1.25em),
-			calc(100% - 1.25em) calc(100% - 1.25em);
-
+			radial-gradient(circle, #000 2em, transparent 2em);
+		background-size: 4em 6em;
+		background-position: center center, center calc(50% - 3.5em), center calc(50% + 3.5em);
 		background-repeat: no-repeat;
 
-		display: grid;
 		place-items: center;
-		/****************/
-		/* VOOR DE POOK */
-		/****************/
 		transform-style: preserve-3d;
 		perspective: 40em;
 		pointer-events: none;
 
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			transition: transform var(--transition-duration) ease-out;
+		}
 		/***********/
 		/* DE STAF */
 		/***********/
 		&::before {
-			--stick-height: 4em;
-			content: '';
-			position: absolute;
 			bottom: calc(50% + 2em);
-			display: block;
 			height: var(--stick-height);
 			aspect-ratio: 2/4;
 			background: silver;
 			transform-origin: center calc(100% + calc(var(--stick-height) / 2));
-			animation: staf var(--animation-duration) ease-in reverse forwards;
+
+			border-radius: 0 0 50% 50% / 0 0 0.75em 0.75em;
+			transform: rotateX(-175deg);
 		}
 
 		/**********/
 		/* DE BAL */
 		/**********/
 		&::after {
-			content: '';
-			position: absolute;
-			height: 6em;
+			height: var(--ball-width);
 			aspect-ratio: 1/1;
 			background-color: #900;
 			border-radius: 50%;
-			animation: bal var(--animation-duration) ease-in reverse forwards;
 			cursor: pointer;
-			pointer-events: initial;
+			pointer-events: none;
+
+			transform: rotateX(-85deg) translateZ(var(--ball-z)) rotateX(85deg);
 		}
 	}
 
 	& input:focus + label {
 		color: red;
-	}
-}
-
-@keyframes bal {
-	0% {
-		transform: rotateX(-85deg) translatez(8em) rotateX(85deg);
-		box-shadow: 0.125em 0.125em 0.5em #3009, 0.5em 0.5em 1em #000c;
-	}
-	50% {
-		box-shadow: 0.25em 0.25em 1em #3006, 1em 1em 3em #0009;
-	}
-	100% {
-		transform: rotateX(85deg) translatez(8em) rotateX(-85deg);
-		box-shadow: 0.125em 0.125em 0.5em #3009, 0.5em 0.5em 1em #000c;
-	}
-}
-
-@keyframes bal-rev {
-	0% {
-		transform: rotateX(-85deg) translatez(8em) rotateX(85deg);
-		box-shadow: 0.125em 0.125em 0.5em #3009, 0.5em 0.5em 1em #000c;
-	}
-	50% {
-		box-shadow: 0.25em 0.25em 1em #3006, 1em 1em 3em #0009;
-	}
-	100% {
-		transform: rotateX(85deg) translatez(8em) rotateX(-85deg);
-		box-shadow: 0.125em 0.125em 0.5em #3009, 0.5em 0.5em 1em #000c;
-	}
-}
-
-@keyframes staf {
-	0% {
-		transform: rotateX(-175deg);
-		box-shadow: 0.25em 0.2em 0.75em #0009;
-		border-radius: 0 0 50% 50% / 0 0 0.75em 0.75em;
-	}
-	20% {
-		box-shadow: 0.25em 0.3em 0.75em #0009;
-	}
-	40%,
-	60% {
-		box-shadow: 0.25em 0.5em 0.75em #0006;
-		border-radius: 0 0 50% 50% / 0 0 1.25em 1.25em;
-	}
-	80% {
-		box-shadow: 0.25em 0.3em 0.75em #0009;
-	}
-	100% {
-		transform: rotateX(5deg);
-		box-shadow: 0.25em 0.2em 0.75em #0009;
-		border-radius: 0 0 50% 50% / 0 0 0.75em 0.75em;
-	}
-}
-
-@keyframes staf-rev {
-	0% {
-		transform: rotateX(-175deg);
-		box-shadow: 0.25em 0.2em 0.75em #0009;
-		border-radius: 0 0 50% 50% / 0 0 0.75em 0.75em;
-	}
-	20% {
-		box-shadow: 0.25em 0.3em 0.75em #0009;
-	}
-	40%,
-	60% {
-		box-shadow: 0.25em 0.5em 0.75em #0006;
-		border-radius: 0 0 50% 50% / 0 0 1.25em 1.25em;
-	}
-	80% {
-		box-shadow: 0.25em 0.3em 0.75em #0009;
-	}
-	100% {
-		transform: rotateX(5deg);
-		box-shadow: 0.25em 0.2em 0.75em #0009;
-		border-radius: 0 0 50% 50% / 0 0 0.75em 0.75em;
 	}
 }
