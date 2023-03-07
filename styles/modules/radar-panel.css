@@ -6,15 +6,7 @@ section[data-panel='radar'] {
 
 	& div {
 		--animation-duration: 4s;
-		--opacity1: 0;
-		--opacity2: 0;
-		--opacity3: 0;
-		--opacity4: 0;
-
-		/* --dot1-position: 20% 30%;
-		--dot2-position: 55% 30%;
-		--dot3-position: 30% 70%;
-		--dot4-position: 70% 80%; */
+		--dot-size: 15px;
 
 		width: 17em;
 		aspect-ratio: 1;
@@ -43,24 +35,24 @@ section[data-panel='radar'] {
 				),
 			/* dots (custom B) ) */
 				radial-gradient(
-					circle at var(--dot1-position, -17px -17px),
-					rgba(0 255 0 / var(--opacity1)) 7px,
-					transparent 17px
+					circle at var(--dot1-position, calc(0px - var(--dot-size))),
+					rgba(0 255 0 / var(--opacity1)) calc(var(--dot-size) / 2),
+					transparent var(--dot-size)
 				),
 			radial-gradient(
-				circle at var(--dot2-position, -17px -17px),
-				rgba(0 255 0 / var(--opacity2)) 7px,
-				transparent 17px
+				circle at var(--dot2-position, calc(0px - var(--dot-size))),
+				rgba(0 255 0 / var(--opacity2)) calc(var(--dot-size) / 2),
+				transparent var(--dot-size)
 			),
 			radial-gradient(
-				circle at var(--dot3-position, -17px -17px),
-				rgba(0 255 0 / var(--opacity3)) 7px,
-				transparent 17px
+				circle at var(--dot3-position, calc(0px - var(--dot-size))),
+				rgba(0 255 0 / var(--opacity3)) calc(var(--dot-size) / 2),
+				transparent var(--dot-size)
 			),
 			radial-gradient(
-				circle at var(--dot4-position, -17px -17px),
-				rgba(0 255 0 / var(--opacity4)) 7px,
-				transparent 17px
+				circle at var(--dot4-position, calc(0px - var(--dot-size))),
+				rgba(0 255 0 / var(--opacity4)) calc(var(--dot-size) / 2),
+				transparent var(--dot-size)
 			),
 			/* horizontale lijnen */
 				repeating-linear-gradient(
@@ -85,68 +77,10 @@ section[data-panel='radar'] {
 	}
 }
 
-@keyframes dot-blink-1 {
-	0%,
-	30% {
-		--opacity1: 0;
-	}
-	100% {
-		--opacity1: 1;
-	}
-}
-@keyframes dot-blink-2 {
-	0%,
-	30% {
-		--opacity2: 0;
-	}
-	100% {
-		--opacity2: 1;
-	}
-}
-@keyframes dot-blink-3 {
-	0%,
-	30% {
-		--opacity3: 0;
-	}
-	100% {
-		--opacity3: 1;
-	}
-}
-@keyframes dot-blink-4 {
-	0%,
-	30% {
-		--opacity4: 0;
-	}
-	100% {
-		--opacity4: 1;
-	}
-}
-
 @keyframes radar {
 	to {
 		--radar-angle: 360deg;
 	}
-}
-
-@property --opacity1 {
-	syntax: '<number>';
-	inherits: false;
-	initial-value: 0;
-}
-@property --opacity2 {
-	syntax: '<number>';
-	inherits: false;
-	initial-value: 0;
-}
-@property --opacity3 {
-	syntax: '<number>';
-	inherits: false;
-	initial-value: 0;
-}
-@property --opacity4 {
-	syntax: '<number>';
-	inherits: false;
-	initial-value: 0;
 }
 
 /* zodat de browser weet hoe --radar-angle te animeren */

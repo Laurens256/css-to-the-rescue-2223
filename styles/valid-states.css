@@ -126,3 +126,62 @@ main:has(section[data-panel='color-combination-checkbox'] input:nth-of-type(1):n
 		}
 	}
 }
+
+/* voor de radar dots */
+@keyframes dot-blink-1 {
+	0%,
+	30% {
+		--opacity1: 0;
+	}
+	100% {
+		--opacity1: 1;
+	}
+}
+@keyframes dot-blink-2 {
+	0%,
+	30% {
+		--opacity2: 0;
+	}
+	100% {
+		--opacity2: 1;
+	}
+}
+@keyframes dot-blink-3 {
+	0%,
+	30% {
+		--opacity3: 0;
+	}
+	100% {
+		--opacity3: 1;
+	}
+}
+@keyframes dot-blink-4 {
+	0%,
+	30% {
+		--opacity4: 0;
+	}
+	100% {
+		--opacity4: 1;
+	}
+}
+
+@property --opacity1 {
+	syntax: '<number>';
+	inherits: false;
+	initial-value: 0;
+}
+@property --opacity2 {
+	syntax: '<number>';
+	inherits: false;
+	initial-value: 0;
+}
+@property --opacity3 {
+	syntax: '<number>';
+	inherits: false;
+	initial-value: 0;
+}
+@property --opacity4 {
+	syntax: '<number>';
+	inherits: false;
+	initial-value: 0;
+}
