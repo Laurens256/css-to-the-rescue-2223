@@ -3,12 +3,16 @@ section[data-panel='radar'] {
 	place-self: center;
 	grid-column: 3 / 4;
 	grid-row: 3 / 5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	& div {
 		--animation-duration: 4s;
 		--dot-size: 15px;
 
-		width: 17em;
+		height: 90%;
+		max-width: 100%;
 		aspect-ratio: 1;
 
 		/* prettier-ignore */

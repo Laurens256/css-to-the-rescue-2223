@@ -11,13 +11,16 @@ section[data-panel='double-slider-value'] {
 	display: flex;
 	flex-direction: column;
 	gap: calc(2ch + 4.3rem);
+	width: 100%;
+	max-width: 500px;
 
 	& input {
-		--height: clamp(10px, 90px, 10vw);
+		--height: clamp(10px, 60px, 10vw);
 		color: var(--line-color);
 		appearance: none;
 		height: var(--height);
-		width: clamp(60px, 500px, 70vh);
+		/* width: 100%; */
+		/* width: clamp(60px, 500px, 70vh); */
 		border-radius: 4em;
 		position: relative;
 		/* 1e gradient lijntje in het midden */ /* prettier-ignore */
@@ -48,7 +51,7 @@ section[data-panel='double-slider-value'] {
 			height: 30px;
 			border: solid var(--line-color) 2px;
 			border-radius: 10px;
-			margin-top: 30.9px;
+			margin-top: 14.5px;
 
 			background: var(--slider-bg)
 				linear-gradient(to right, var(--slider-bg-lighter) 1px, transparent 1px);

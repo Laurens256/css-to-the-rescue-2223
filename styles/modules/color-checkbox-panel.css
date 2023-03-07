@@ -1,15 +1,14 @@
 section[data-panel='color-combination-checkbox'] {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
-	width: 25em;
-	max-width: 100%;
 	gap: 1em;
 	place-self: center;
+	width: 90%;
 
 	& input {
 		appearance: none;
 		position: relative;
-		height: 4em;
+		width: 100%;
 		aspect-ratio: 1;
 		place-self: center;
 

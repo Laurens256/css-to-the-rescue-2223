@@ -7,7 +7,9 @@ section[data-panel='master-switch'] {
 	--ball-z: calc(var(--full-width) / 1.875);
 	grid-column: 2 / 3;
 	grid-row: 3 / 5;
-	place-self: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	& input {
 		display: none;
@@ -27,6 +29,7 @@ section[data-panel='master-switch'] {
 	& label {
 		font-size: clamp(0.5em, 2vmin, 0.75em);
 		width: var(--full-width);
+		max-height: 100%;
 		aspect-ratio: 1/2;
 		isolation: isolate;
 		background-color: var(--bg);
