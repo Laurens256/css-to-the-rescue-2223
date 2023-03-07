@@ -6,12 +6,11 @@ section[data-panel='double-slider-value'] {
 
 	grid-column: 3 / 4;
 	grid-row: 1 / 3;
+	place-self: center;
 	/* transform: rotate(-90deg); */
 	display: flex;
 	flex-direction: column;
-	gap: 1em;
-	align-items: center;
-	justify-content: center;
+	gap: calc(2ch + 4.3rem);
 
 	& input {
 		--height: clamp(10px, 90px, 10vw);
@@ -51,7 +50,8 @@ section[data-panel='double-slider-value'] {
 			border-radius: 10px;
 			margin-top: 30.9px;
 
-			background: var(--slider-bg) linear-gradient(to right, var(--slider-bg-lighter) 1px, transparent 1px);
+			background: var(--slider-bg)
+				linear-gradient(to right, var(--slider-bg-lighter) 1px, transparent 1px);
 			background-size: 4px;
 		}
 
@@ -67,18 +67,22 @@ section[data-panel='double-slider-value'] {
 			position: absolute;
 			font-size: 3rem;
 			width: 2ch;
-			width: calc(2ch + .8rem);
-			left: -4.8rem;
-			bottom: 1.25rem;
+			width: calc(2ch + 0.8rem);
+			/* left: -4.8rem;
+			bottom: 1.25rem; */
+			left: 50%;
+			bottom: calc(0px - 2ch - 1.3rem);
+			transform: translateX(-50%);
 			/* transform: rotate(90deg); */
 			/* cool: zorgt ervoor dat er altijd 2 characters worden getoond en dat tekst overflowed aan linkerkant */
 			direction: rtl;
 			overflow: hidden;
-			letter-spacing: .3rem;
+			letter-spacing: 0.3rem;
 
 			border-radius: 2px;
 			border: solid var(--screen-color);
 			border-width: 5px 15px;
+			pointer-events: none;
 		}
 
 		&::before {
@@ -88,10 +92,9 @@ section[data-panel='double-slider-value'] {
 		}
 
 		&::after {
-			content: '0'attr(data-value);
+			content: '0' attr(data-value);
 			color: var(--digital-letters);
-			text-shadow: 0 0 .1em currentColor;
-			box-shadow: 0 0 .1em currentColor;
+			text-shadow: 0 0 0.1em currentColor;
 			box-shadow: 0 0 0 2px var(--line-color);
 		}
 	}

@@ -1,0 +1,128 @@
+/* individuele valid states per component */
+main {
+	/* radio buttons */
+	&:has(section[data-panel='color-combination-checkbox'] input:nth-of-type(1):not(:checked)	
+		):has(section[data-panel='color-combination-radio'] fieldset:nth-of-type(1) input:first-of-type:checked
+		):has(section[data-panel='color-combination-radio'] fieldset:nth-of-type(2) input:last-of-type:checked
+		):has(section[data-panel='color-combination-radio'] fieldset:nth-of-type(3) input:first-of-type:checked
+		):has(section[data-panel='color-combination-radio'] fieldset:nth-of-type(4) input:first-of-type:checked
+		):has(section[data-panel='color-combination-radio'] fieldset:nth-of-type(5) input:last-of-type:checked) {
+			/* add radar dot */
+			& section[data-panel='radar'] {
+				--dot1-position: 20% 30%;
+			}
+		}
+
+	/* checkboxes */
+	&:has(section[data-panel='color-combination-checkbox'] input:nth-of-type(1):not(:checked)
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(2):checked
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(3):not(:checked)
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(4):not(:checked)
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(5):checked
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(6):not(:checked)
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(7):not(:checked)
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(8):not(:checked)
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(9):checked
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(10):checked) {
+		/* add radar dot */
+		& section[data-panel='radar'] {
+			--dot2-position: 55% 30%;
+		}
+	}
+
+	/* sliders */
+	&:has(section[data-panel='double-slider-value'] input:first-of-type[data-value='18']:not(:active)
+	):has(section[data-panel='double-slider-value'] input:last-of-type[data-value='12']:not(:active)) {
+
+		/* sliders valid state */
+		& section[data-panel='double-slider-value'] input::after {
+			box-shadow: 0 0 0 2px var(--digital-letters);
+			animation: slidersValid 0.8s ease 2 0.3s;
+		}
+
+		/* add radar dot */
+		& section[data-panel='radar'] {
+			--dot3-position: 30% 70%;
+		}
+	}
+
+	/* input code */
+	&:has(section[data-panel='input-code'] input:valid) {
+		/* input code valid / invalid state */
+		& section[data-panel='input-code'] div {
+			border-color: var(--digital-letters);
+			animation: codeValid 0.8s ease 2 0.3s;
+		}
+
+		/* add radar dot */
+		& section[data-panel='radar'] {
+			--dot4-position: 70% 70%;
+		}
+	}
+}
+
+
+@keyframes codeValid {
+	0%,
+	100% {
+		border-color: var(--digital-letters);
+	}
+	50% {
+		border-color: transparent;
+	}
+}
+
+@keyframes slidersValid {
+	0%,
+	100% {
+		box-shadow: 0 0 0 2px var(--digital-letters);
+	}
+	50% {
+		box-shadow: 0 0 0 2px transparent;
+	}
+}
+
+/* alle valid state gecombineerd */
+main:has(section[data-panel='color-combination-checkbox'] input:nth-of-type(1):not(:checked)
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(2):checked
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(3):not(:checked)
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(4):not(:checked)
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(5):checked
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(6):not(:checked)
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(7):not(:checked)
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(8):not(:checked)
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(9):checked
+	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(10):checked
+	
+	/* radio buttons section */
+	):has(section[data-panel='color-combination-radio'] fieldset:nth-of-type(1) input:first-of-type:checked
+	):has(section[data-panel='color-combination-radio'] fieldset:nth-of-type(2) input:last-of-type:checked
+	):has(section[data-panel='color-combination-radio'] fieldset:nth-of-type(3) input:first-of-type:checked
+	):has(section[data-panel='color-combination-radio'] fieldset:nth-of-type(4) input:first-of-type:checked
+	):has(section[data-panel='color-combination-radio'] fieldset:nth-of-type(5) input:last-of-type:checked
+
+	/* range sliders module */
+	):has(section[data-panel='double-slider-value'] input:first-of-type[data-value='18']:not(:active)
+	):has(section[data-panel='double-slider-value'] input:last-of-type[data-value='12']:not(:active)
+
+	/* input code */
+	):has(section[data-panel='input-code'] input:valid
+	) section[data-panel='master-switch'] {
+	& input {
+		display: initial;
+	}
+
+	/* haal het balkje in het midden weg en enable de checkbox weer */
+	& label {
+		background-image: linear-gradient(to right, #000, #000),
+			radial-gradient(circle, #000 2em, transparent 2em),
+			radial-gradient(circle, #000 2em, transparent 2em);
+		background-size: 4em 7em, 4em 7em, 4em 7em;
+		background-position: center center, center calc(50% - 3.5em), center calc(50% + 3.5em);
+
+		&::after {
+			pointer-events: initial;
+			cursor: pointer;
+		}
+	}
+}

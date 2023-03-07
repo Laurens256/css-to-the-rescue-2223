@@ -1,6 +1,7 @@
 @import url('./default-panel.css');
-@import url('./portrait.css');
 @import url('./animation/idle-glow.css');
+
+@import url('./valid-states.css');
 
 /* modules */
 @import url('./modules/radar-panel.css');

@@ -1,49 +1,13 @@
-/* witregels kunnen code breken */
-main:has(section[data-panel='color-combination-checkbox'] input:nth-of-type(1):not(:checked)
-	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(2):checked
-	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(3):not(:checked)
-	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(4):not(:checked)
-	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(5):checked
-	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(6):not(:checked)
-	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(7):not(:checked)
-	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(8):not(:checked)
-	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(9):checked
-	):has(section[data-panel='color-combination-checkbox'] input:nth-of-type(10):checked
-	
-	/* radio buttons section */
-	):has(section[data-panel='color-combination-radio'] fieldset:nth-of-type(1) input:first-of-type:checked
-	):has(section[data-panel='color-combination-radio'] fieldset:nth-of-type(2) input:last-of-type:checked
-	):has(section[data-panel='color-combination-radio'] fieldset:nth-of-type(3) input:first-of-type:checked
-	):has(section[data-panel='color-combination-radio'] fieldset:nth-of-type(4) input:first-of-type:checked
-	):has(section[data-panel='color-combination-radio'] fieldset:nth-of-type(5) input:last-of-type:checked
-
-	/* range sliders module */
-	):has(section[data-panel='double-slider-value'] input:first-of-type[data-value='0']
-	):has(section[data-panel='double-slider-value'] input:last-of-type[data-value='20']
-
-	/* input code */
-	):has(section[data-panel='input-code'] input:valid
-	) section[data-panel='master-switch'] {
-	filter: hue-rotate(180deg);
-
-	& input {
-		display: initial;
-	}
-
-	& label::after {
-		pointer-events: initial;
-		cursor: pointer;
-	}
-}
-
 section[data-panel='master-switch'] {
 	--bg: #ccc;
 	--transition-duration: 1s;
 	--full-width: 15em;
 	--stick-height: calc(var(--full-width) / 3.75);
 	--ball-width: calc(var(--full-width) / 2.5);
-
 	--ball-z: calc(var(--full-width) / 1.875);
+	grid-column: 2 / 3;
+	grid-row: 3 / 5;
+	place-self: center;
 
 	& input {
 		display: none;
@@ -74,11 +38,13 @@ section[data-panel='master-switch'] {
 		padding: 0.5em 0;
 		color: black;
 
-		background-image: linear-gradient(to right, #000, #000),
+		background-image: linear-gradient(to right, var(--bg) 0, var(--bg) 4em),
+			linear-gradient(to right, #000, #000),
 			radial-gradient(circle, #000 2em, transparent 2em),
 			radial-gradient(circle, #000 2em, transparent 2em);
-		background-size: 4em 6em;
-		background-position: center center, center calc(50% - 3.5em), center calc(50% + 3.5em);
+		background-size: 4em 20px, 4em 7em, 4em 7em, 4em 7em;
+		background-position: center center, center center, center calc(50% - 3.5em),
+			center calc(50% + 3.5em);
 		background-repeat: no-repeat;
 
 		place-items: center;
@@ -121,7 +87,9 @@ section[data-panel='master-switch'] {
 		}
 	}
 
-	& input:focus + label {
+	& input:focus-visible + label {
 		color: red;
+		outline: solid 2px var(--bg);
+		outline-offset: 5px;
 	}
 }

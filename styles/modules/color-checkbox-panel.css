@@ -4,6 +4,7 @@ section[data-panel='color-combination-checkbox'] {
 	width: 25em;
 	max-width: 100%;
 	gap: 1em;
+	place-self: center;
 
 	& input {
 		appearance: none;
