@@ -10,31 +10,45 @@ section[data-panel='radar'] {
 	& div {
 		--animation-duration: 4s;
 		--dot-size: 15px;
-
 		height: 90%;
 		max-width: 100%;
 		aspect-ratio: 1;
 
-		/* prettier-ignore */
 		animation: radar var(--animation-duration) infinite linear, 
 		dot-blink-1 var(--animation-duration) infinite ease calc(var(--animation-duration) / 2) reverse,
 		dot-blink-2 var(--animation-duration) infinite ease calc(var(--animation-duration) / 1.4) reverse, 
 		dot-blink-3 var(--animation-duration) infinite ease calc(var(--animation-duration) / 3.5) reverse,
 		dot-blink-4 var(--animation-duration) infinite ease calc(var(--animation-duration) / 13.5) reverse;
-		background-color: black;
-		border: solid 20px black;
+		--border-width: 15px;
+		--box-shadow-width: 5px;
+		--box-shadow-color: green;
+
+		box-shadow: 
+		0 calc(0px - var(--box-shadow-width)) 0 0 var(--top-color, currentColor),
+		var(--box-shadow-width) 0 0 0 var(--right-color, currentColor),
+		0 var(--box-shadow-width) 0 0 var(--bottom-color, currentColor),
+		calc(0px - var(--box-shadow-width)) 0 0 0 var(--left-color, currentColor);
+
+		width: 17em;
+		aspect-ratio: 1;
+
+		color: #000;
+		animation: var(--default-radar-anim);
+		background-color: currentColor;
+		border: solid var(--border-width) currentColor;
+		border-top-width: 5px;
 
 		background-image:
 		/* het mask */ radial-gradient(
 				closest-side,
 				transparent 100%,
-				black calc(100% + 0.5px)
+				currentColor calc(100% + 0.5px)
 			),
 			/* de woosh */
 				conic-gradient(
 					from var(--radar-angle, 0deg),
 					transparent,
-					lime 119.8deg,
+					rgba(0, 255, 0, 0.7) 119.8deg,
 					transparent 120.2deg
 				),
 			/* dots (custom B) ) */
@@ -62,21 +76,21 @@ section[data-panel='radar'] {
 				repeating-linear-gradient(
 					to right,
 					transparent 45% calc(50% - 0.6px),
-					lime calc(50% - 0.4px) calc(50% + 0.4px),
+					green calc(50% - 0.4px) calc(50% + 0.4px),
 					transparent calc(50% + 0.6px) 55%
 				),
 			/* verticale lijnen */
 				repeating-linear-gradient(
 					transparent 45% calc(50% - 0.6px),
-					lime calc(50% - 0.4px) calc(50% + 0.4px),
+					green calc(50% - 0.4px) calc(50% + 0.4px),
 					transparent calc(50% + 0.6px) 55%
 				),
 			/* cirkels */
 				repeating-radial-gradient(
 					closest-side,
-					lime 0 0.4px,
+					green 0 0.4px,
 					transparent 0.6px calc(20% - 0.6px),
-					lime calc(20% - 0.4px) 20%
+					green calc(20% - 0.4px) 20%
 				);
 	}
 }
