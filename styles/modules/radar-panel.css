@@ -29,14 +29,9 @@ section[data-panel='radar'] {
 		0 var(--box-shadow-width) 0 0 var(--bottom-color, currentColor),
 		calc(0px - var(--box-shadow-width)) 0 0 0 var(--left-color, currentColor);
 
-		width: 17em;
-		aspect-ratio: 1;
-
 		color: #000;
-		animation: var(--default-radar-anim);
 		background-color: currentColor;
 		border: solid var(--border-width) currentColor;
-		border-top-width: 5px;
 
 		background-image:
 		/* het mask */ radial-gradient(

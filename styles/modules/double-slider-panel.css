@@ -9,11 +9,10 @@ section[data-panel='double-slider-value'] {
 	place-self: center;
 	display: flex;
 	flex-direction: column;
-	gap: .5em;
+	gap: 1em;
 	width: 100%;
 	max-width: 500px;
 	height: fit-content;
-	background: red;
 	position: relative;
 	margin-top: calc(0px - 4ch - 1.3rem);
 
@@ -26,7 +25,6 @@ section[data-panel='double-slider-value'] {
 		height: clamp(10px, 60px, 10vw);
 		height: var(--input-height);
 		border-radius: 4em;
-		/* position: relative; */
 		/* 1e gradient lijntje in het midden */ /* prettier-ignore */
 		background: linear-gradient(
 					to bottom,
@@ -74,8 +72,7 @@ section[data-panel='double-slider-value'] {
 			position: absolute;
 			font-size: 3em;
 			width: calc(2ch + 0.8rem);
-			bottom: calc(0px - 2ch - 1.3rem);
-			/* transform: translateX(-50%); */
+			bottom: calc(0px - 2ch - .7rem);
 			/* cool: zorgt ervoor dat er altijd 2 characters worden getoond en dat tekst overflowed aan linkerkant */
 			direction: rtl;
 			overflow: hidden;
