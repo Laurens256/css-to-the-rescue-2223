@@ -1,16 +1,3 @@
-## Dingen die niet (redelijk) kunnen
-- Circular slider dmv html range input
-- Knoppen die door kleuren cyclen (kan wel met 2 kleuren dmv checkbox)
-- Knoppen in een bepaalde combinatie forceren
-- attr() gebruiken om een css waarde te veranderen (behalve `content`)
-- `:empty` selector werkt niet op `input` (workaround is `:placeholder-shown`)
-
-
-## Dingen die wel kunnen
-- HTML pattern met css :valid en :invalid om specifieke waardes te accepteren
-- Slider die alleen specifieke waarde(s) accepteert dmv klein stukje JavaScript.
-- Dmv `contenteditable` de `:empty` selector gebruiken voor user input.
-
 ## Week 1
 In week 1 van CSS To The Rescue is mijn plan om onderzoek te doen naar mogelijkheden, tools, schetsen etc. Omdat we voor dit project veel nieuwe / experimentele selectors en technieken mogen gebruiken, wil ik goed onderzoek doen naar mijn mogelijkheden. In dit document zullen zich lijstjes begeven met ideeën die wél of juist niet mogelijk zijn met CSS.
 
@@ -45,3 +32,24 @@ Het plan voor week 2 is om meer modules te bouwen voor het bedieningspaneel. In 
 
 ### Modules
 In week 2 heb ik een module met radio buttons en een deel van een range slider module gebouwd. Het radio button paneel bestaat uit twee rijen met buttons die in een bepaald sequence moeten staan. De module met range sliders leest door middle van een stukje Javascript de waarde van de slider uit en zet met CSS in een `::before` element. Hiervoor wordt gebruik gemaakt van de `attr()` functie uit CSS.
+
+## Week 3
+In week 3 ben ik de meeste tijd bezig geweest met het plaatsen van alle modules en wat finishing touches aan de modules aan te brengen. Voor de plaatsing van de modules heb ik ervoor gekozen om grid te gebruiken. Eerder was ik van plan dit met flexbox te doen omdat flexbox wat dynamischer is dan grid. Uiteindelijk heb ik toch gekozen voor grid omdat ik het overzichtelijker vond om de modules te plaatsen. Hierdoor is het paneel minder responsive maar dit leek me ook een beetje veel om erbij te doen.
+
+### Hints
+Deze week heb ik ook de hints toegevoegd om de puzzel mee op te lossen. Ik heb eigenlijk geen idee hoe moeilijk de puzzel is omdat alleen ik hem nog heb gespeeld. De hints staan op papiertjes die op het paneel verstrooid liggen. Met meer tijd had ik nog wat creatieve manieren van hints overbrengen kunnen implementeren. Hieronder 1 van de 2 hint papiertjes.
+<p align="center">
+	<img src="./img/week-3-hint.png" alt="hint papiertje">
+</p>
+
+
+### Einde
+Het eindresultaat wanneer je de puzzel op hebt gelost is niet helemaal wat ik eerst had bedacht. Uiteindelijk had ik niet echt meer veel tijd om het helemaal te maken zoals ik wilde. Als je m wil zien moet je de puzzel oplossen :).
+
+Hieronder nog een klein lijstje met dingen waar ik tegenaan ben gelopen tijdens het maken van dit project.
+## Dingen die niet (redelijk) kunnen
+- Circular slider dmv html range input
+- Knoppen die door kleuren cyclen (kan wel met 2 kleuren dmv checkbox)
+- Knoppen in een bepaalde volgorde forceren
+- attr() gebruiken om een css waarde te veranderen (behalve `content`)
+- `:empty` selector werkt niet op `input` (workaround is `:placeholder-shown`)
