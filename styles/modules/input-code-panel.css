@@ -1,8 +1,12 @@
 section[data-panel='input-code'] {
-	--font-size: 6rem;
-	place-self: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	grid-column: 2 / 3;
 	grid-row: 2 / 3;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
 
 	& div {
 		position: relative;
@@ -11,8 +15,8 @@ section[data-panel='input-code'] {
 		justify-content: center;
 		align-items: center;
 		background: var(--screen-color);
-		padding: 0.5rem 1rem;
-		font-size: var(--font-size);
+		padding: 0.5rem 1em;
+		font-size: clamp(2em, 4em, 10cqw);
 		width: calc(4ch + 2rem);
 		color: var(--digital-letters);
 		isolation: isolate;

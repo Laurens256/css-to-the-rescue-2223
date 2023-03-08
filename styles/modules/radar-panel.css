@@ -3,11 +3,18 @@ section[data-panel='radar'] {
 	place-self: center;
 	grid-column: 3 / 4;
 	grid-row: 3 / 5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	& div {
 		--animation-duration: 4s;
 		--dot-size: 15px;
-		--default-radar-anim: radar var(--animation-duration) infinite linear, 
+		height: 90%;
+		max-width: 100%;
+		aspect-ratio: 1;
+
+		animation: radar var(--animation-duration) infinite linear, 
 		dot-blink-1 var(--animation-duration) infinite ease calc(var(--animation-duration) / 2) reverse,
 		dot-blink-2 var(--animation-duration) infinite ease calc(var(--animation-duration) / 1.4) reverse, 
 		dot-blink-3 var(--animation-duration) infinite ease calc(var(--animation-duration) / 3.5) reverse,
