@@ -16,7 +16,7 @@ body {
 		transform: translateX(-50%);
 		width: 30em;
 		max-width: 90vw;
-		height: calc(5vh + 2.4px);
+		height: calc(10vh + 2.4px);
 		background: var(--main-bg);
 		border-left: 2px solid #444444;
 		border-right: 2px solid #444444;

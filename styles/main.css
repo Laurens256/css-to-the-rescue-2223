@@ -28,12 +28,6 @@
 	font-family: 'kalam';
 }
 
-@font-face {
-	src: url('/Kalam/Kalam-Bold.ttf');
-	font-family: 'kalam-bold';
-	font-weight: bold;
-}
-
 
 :root {
 	--main-bg: #2b2b2b;
