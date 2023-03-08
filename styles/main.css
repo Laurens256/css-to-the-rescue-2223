@@ -11,9 +11,17 @@
 @import url('./modules/double-slider-panel.css');
 @import url('./modules/input-code-panel.css');
 
+/* hints */
+@import url('./hints/sticky-note.css');
+
 @font-face {
 	src: url('../assets/digital-7-font/Digital7Mono-Yz9J4.ttf');
 	font-family: 'digital-7';
+}
+
+@font-face {
+	src: url('../assets/Kalam/Kalam-Regular.ttf');
+	font-family: 'kalam';
 }
 
 

@@ -10,6 +10,9 @@ main {
 			/* add radar dot */
 			& section[data-panel='radar'] {
 				--dot1-position: 20% 30%;
+				& div {
+					--top-color: var(--box-shadow-color);
+				}
 			}
 		}
 
@@ -27,6 +30,9 @@ main {
 		/* add radar dot */
 		& section[data-panel='radar'] {
 			--dot2-position: 55% 30%;
+			& div {
+				--right-color: var(--box-shadow-color);
+			}
 		}
 	}
 
@@ -43,6 +49,9 @@ main {
 		/* add radar dot */
 		& section[data-panel='radar'] {
 			--dot3-position: 30% 70%;
+			& div {
+				--bottom-color: var(--box-shadow-color);
+			}
 		}
 	}
 
@@ -57,6 +66,9 @@ main {
 		/* add radar dot */
 		& section[data-panel='radar'] {
 			--dot4-position: 70% 70%;
+			& div {
+				--left-color: var(--box-shadow-color);
+			}
 		}
 	}
 }
