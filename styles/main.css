@@ -12,16 +12,26 @@
 @import url('./modules/input-code-panel.css');
 
 /* hints */
+@import url('./hints/hints.css');
 @import url('./hints/sticky-note.css');
+@import url('./hints/paper-sheet.css');
+
+@import url('./fin.css');
 
 @font-face {
-	src: url('../assets/digital-7-font/Digital7Mono-Yz9J4.ttf');
+	src: url('/digital-7-font/Digital7Mono-Yz9J4.ttf');
 	font-family: 'digital-7';
 }
 
 @font-face {
-	src: url('../assets/Kalam/Kalam-Regular.ttf');
+	src: url('/Kalam/Kalam-Regular.ttf');
 	font-family: 'kalam';
+}
+
+@font-face {
+	src: url('/Kalam/Kalam-Bold.ttf');
+	font-family: 'kalam-bold';
+	font-weight: bold;
 }
 
 

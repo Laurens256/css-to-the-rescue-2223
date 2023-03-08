@@ -1,0 +1,27 @@
+img {
+	display: none;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 90vw;
+	max-height: 90vh;
+	z-index: 1;
+}
+
+body > div {
+	transition: all 15s ease;
+	perspective: 1em;
+	transition-delay: 1.5s;
+	z-index: 2;
+}
+
+body:has(section[data-panel='master-switch'] input:checked) {
+	& > div {
+		transform: translateY(80%) rotateX(90deg);
+	}
+
+	& img {
+		display: initial;
+	}
+}

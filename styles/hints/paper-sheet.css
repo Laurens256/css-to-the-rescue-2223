@@ -1,0 +1,44 @@
+section[data-panel='paper-sheet'] {
+	& div {
+		aspect-ratio: 1 / 1.414;
+		height: 90%;
+		max-width: 100%;
+		transform: rotate(-5deg);
+		transition: all 0.8s ease;
+		right: -150%;
+		top: -55%;
+		font-family:'kalam', cursive, serif;
+		overflow: hidden;
+	}
+
+	& input {
+		box-shadow: 0px 0px 5px 0px #888;
+		background-image: repeating-linear-gradient(white 0 24px, #4cacf9 0 26px);
+		padding: 24px 5% 0 18.5%;
+
+		/* lijntje aan zijkant */
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 17.5%;
+			height: 100%;
+			width: 2px;
+			background: #f46263;
+		}
+	}
+
+	& div ul {
+		position: absolute;
+		inset: 28px 5% 0 18.5%;
+		padding-left: .2em;
+		line-height: 26px;
+		font-size: 22px;
+	}
+
+	& div:has(:checked) {
+		top: 50%;
+		right: 20%;
+		transform: rotate(-40deg) translate(50%, -50%);
+	}
+}
