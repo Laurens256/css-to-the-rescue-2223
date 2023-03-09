@@ -1,7 +1,8 @@
 section[data-panel='paper-sheet'] {
 	& div {
 		aspect-ratio: 1 / 1.414;
-		aspect-ratio: 1 / 1.275;
+		/* aspect-ratio: 1 / 1.275; */
+		min-height: 16em;
 		height: 90%;
 		max-width: 100%;
 		transform: rotate(10deg);
